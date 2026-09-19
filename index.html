@@ -96,7 +96,7 @@
     .center { text-align: center; }
     .center .section-sub { margin: 0 auto; }
 
-    /* ABOUT + SUBJECTS COMBINED */
+    /* ABOUT + SUBJECTS */
     .about-subjects { background: var(--gray); }
     .about-inner { display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap; }
     .about-visual {
@@ -140,4 +140,302 @@
       background: #34a853; color: white; font-size: .75rem; font-weight: 800;
       padding: 6px 50px; transform: rotate(45deg); letter-spacing: .5px;
     }
-    .pricing-card-single h3 { font-size: 1.2rem; font-weight: 700; opacity
+    .pricing-card-single h3 { font-size: 1.2rem; font-weight: 700; opacity: .85; margin-bottom: 6px; }
+    .price-big { font-size: 4rem; font-weight: 900; color: var(--yellow); line-height: 1; margin: 16px 0 4px; }
+    .price-sub { font-size: 1rem; opacity: .75; margin-bottom: 12px; }
+    .first-free-note {
+      display: inline-block; background: #34a853; color: white;
+      font-size: .88rem; font-weight: 700; padding: 6px 18px; border-radius: 20px; margin-bottom: 32px;
+    }
+    .pricing-features { list-style: none; margin-bottom: 36px; text-align: left; display: inline-block; }
+    .pricing-features li {
+      padding: 9px 0; font-size: .97rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .check { color: var(--yellow); font-weight: 900; font-size: 1.1rem; }
+    .btn-pricing {
+      background: white; color: var(--blue); padding: 14px 36px;
+      border-radius: 30px; font-weight: 800; font-size: 1rem;
+      border: none; cursor: pointer; transition: transform .2s, box-shadow .2s;
+    }
+    .btn-pricing:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); color: white; padding: 40px 60px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-brand .logo { font-size: 1.3rem; }
+    .footer-brand p { color: rgba(255,255,255,0.45); margin-top: 8px; font-size: .85rem; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.6); font-size: .9rem; transition: color .2s; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom {
+      background: #111; color: rgba(255,255,255,0.35);
+      text-align: center; padding: 14px; font-size: .82rem;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55); z-index: 999;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: white; border-radius: 24px; padding: 48px 40px;
+      max-width: 520px; width: 100%; position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute; top: 18px; right: 22px;
+      font-size: 1.5rem; background: none; border: none;
+      cursor: pointer; color: var(--muted); line-height: 1;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal h2 { font-size: 1.6rem; font-weight: 900; color: var(--dark-blue); margin-bottom: 6px; }
+    .modal .modal-sub { color: var(--muted); font-size: .93rem; margin-bottom: 10px; line-height: 1.6; }
+    .modal .free-tag {
+      display: inline-block; background: #e6f4ea; color: #1e7e34;
+      font-size: .82rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: 6px; color: var(--text); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0;
+      border-radius: 10px; font-size: .95rem; font-family: inherit;
+      transition: border-color .2s; outline: none; color: var(--text);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit {
+      width: 100%; padding: 14px; background: var(--blue); color: white;
+      border: none; border-radius: 30px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background .2s; margin-top: 4px;
+    }
+    .btn-submit:hover { background: var(--dark-blue); }
+    .form-note { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 10px; }
+
+    /* SUCCESS */
+    .success-state { display: none; text-align: center; padding: 20px 0; }
+    .success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+    .success-state h3 { font-size: 1.5rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 10px; }
+    .success-state p { color: var(--muted); line-height: 1.7; font-size: .97rem; }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { flex-direction: column; padding: 70px 24px; text-align: center; min-height: unset; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-btns { justify-content: center; }
+      section { padding: 60px 24px; }
+      .about-inner { flex-direction: column; text-align: center; }
+      footer { flex-direction: column; text-align: center; padding: 36px 24px; }
+      .footer-links { justify-content: center; }
+      .pricing-card-single { padding: 40px 24px; }
+      .modal { padding: 36px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">SAT <span>Made Easy</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#subjects">Subjects</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Book a Session</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>SAT Tutoring,<br/><span>Made Easy.</span></h1>
+    <p>One-on-one virtual SAT tutoring in English and Math from a tutor who scored a 1590 superscore. Your first session is free.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openModal()">Book Your Free First Session</button>
+      <a href="#about" class="btn-outline">About Your Tutor</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="score-ring">
+      <div class="score-num">1590</div>
+      <div class="score-label">Superscore</div>
+    </div>
+    <h3>Tutored by a 1590 Scorer</h3>
+    <p>Virtual sessions for English and Math at $50/hr.</p>
+    <div class="free-tag-card">🎉 First Session Free</div>
+  </div>
+</section>
+
+<!-- ABOUT + SUBJECTS -->
+<section class="about-subjects" id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-big-score">1590</div>
+      <div class="about-score-label">SAT Superscore</div>
+      <div class="about-divider"></div>
+      <div class="about-sub-text">English and Math</div>
+    </div>
+    <div class="about-content">
+      <div class="section-tag">About Your Tutor</div>
+      <h2 class="section-title">Why Work With Me</h2>
+      <p>I scored a 1590 on the SAT and know the test thoroughly. I offer focused, one-on-one virtual sessions for students who want to improve their score in English, Math, or both.</p>
+      <p>Sessions are personalized to what you specifically need to work on. No generic lessons, no wasted time.</p>
+
+      <div class="cards-grid" id="subjects">
+        <div class="subject-card blue">
+          <div class="card-icon">📖</div>
+          <h3>English: Reading and Writing</h3>
+          <p>Covers reading comprehension, grammar, vocabulary, and sentence structure as tested on the SAT.</p>
+        </div>
+        <div class="subject-card green">
+          <div class="card-icon">🔢</div>
+          <h3>Math: Algebra and Beyond</h3>
+          <p>Covers algebra, functions, geometry, statistics, and word problems as tested on the SAT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="center">
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-title">Simple Pricing</h2>
+    <p class="section-sub">One flat rate. No hidden fees. Your first session is completely free.</p>
+  </div>
+  <div class="pricing-center">
+    <div class="pricing-card-single">
+      <div class="free-ribbon">FIRST SESSION FREE</div>
+      <h3>1-on-1 Virtual Tutoring</h3>
+      <div class="price-big">$50</div>
+      <div class="price-sub">per hour</div>
+      <div class="first-free-note">🎉 First session is free</div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> English and Math available</li>
+        <li><span class="check">✓</span> 100% virtual</li>
+        <li><span class="check">✓</span> Personalized to your needs</li>
+        <li><span class="check">✓</span> Flexible scheduling</li>
+        <li><span class="check">✓</span> Taught by a 1590 scorer</li>
+      </ul>
+      <button class="btn-pricing" onclick="openModal()">Book Your Free First Session</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">SAT <span>Made Easy</span></div>
+    <p>Virtual SAT tutoring in English and Math. $50/hr. First session free.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  © 2025 SAT Made Easy. All rights reserved.
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <div id="formState">
+      <h2>Book a Session</h2>
+      <p class="modal-sub">Fill out the form and I will get back to you within 24 hours to confirm your session.</p>
+      <span class="free-tag">🎉 Your first session is completely free</span>
+      <form id="bookingForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="jane@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="tel" id="phone" placeholder="(555) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="english">English (Reading and Writing)</option>
+            <option value="math">Math</option>
+            <option value="both">Both English and Math</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="availability">Your General Availability</label>
+          <select id="availability" required>
+            <option value="" disabled selected>Select your availability</option>
+            <option value="weekday-morning">Weekday Mornings</option>
+            <option value="weekday-afternoon">Weekday Afternoons</option>
+            <option value="weekday-evening">Weekday Evenings</option>
+            <option value="weekend">Weekends</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="goals">Anything else I should know? (optional)</label>
+          <textarea id="goals" placeholder="e.g. I am aiming for a 1400 by March."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Booking Request</button>
+        <p class="form-note">I will reach out within 24 hours to confirm your session.</p>
+      </form>
+    </div>
+    <div class="success-state" id="successState">
+      <div class="success-icon">🎉</div>
+      <h3>Request Received!</h3>
+      <p>Thanks for reaching out. I will get back to you within 24 hours to confirm your free first session.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('formState').style.display = 'none';
+    document.getElementById('successState').style.display = 'block';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>

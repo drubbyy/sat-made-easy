@@ -33,22 +33,18 @@
     .nav-cta {
       background: var(--blue); color: white; padding: 10px 24px;
       border-radius: 25px; font-weight: 600; transition: background .2s;
+      cursor: pointer; border: none; font-size: 1rem;
     }
     .nav-cta:hover { background: var(--dark-blue); }
 
     /* HERO */
     .hero {
       background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 60%, #42a5f5 100%);
-      color: white; padding: 100px 60px; display: flex;
-      align-items: center; justify-content: space-between; gap: 40px;
-      min-height: 90vh;
+      color: white; padding: 100px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 60px; min-height: 88vh;
     }
-    .hero-text { max-width: 580px; }
-    .hero-badge {
-      display: inline-block; background: rgba(255,255,255,0.2);
-      padding: 6px 16px; border-radius: 20px; font-size: .85rem;
-      font-weight: 600; margin-bottom: 20px; letter-spacing: 1px;
-    }
+    .hero-text { max-width: 560px; }
     .hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
     .hero h1 span { color: var(--yellow); }
     .hero p { font-size: 1.15rem; opacity: .9; margin-bottom: 36px; line-height: 1.7; }
@@ -56,463 +52,92 @@
     .btn-primary {
       background: var(--yellow); color: #1a1a1a; padding: 14px 32px;
       border-radius: 30px; font-weight: 700; font-size: 1rem;
-      transition: transform .2s, box-shadow .2s;
+      transition: transform .2s, box-shadow .2s; border: none; cursor: pointer;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
     .btn-outline {
       border: 2px solid white; color: white; padding: 14px 32px;
-      border-radius: 30px; font-weight: 700; font-size: 1rem; transition: background .2s;
+      border-radius: 30px; font-weight: 700; font-size: 1rem;
+      transition: background .2s; background: transparent; cursor: pointer;
     }
     .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+    /* HERO CARD */
     .hero-card {
-      background: white; border-radius: 20px; padding: 36px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2); min-width: 300px;
-      color: var(--text); text-align: center;
+      background: white; border-radius: 20px; padding: 40px 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      color: var(--text); text-align: center; flex-shrink: 0; min-width: 270px;
     }
     .score-ring {
-      width: 140px; height: 140px; border-radius: 50%;
-      border: 10px solid var(--blue); display: flex; flex-direction: column;
-      align-items: center; justify-content: center; margin: 0 auto 20px;
+      width: 150px; height: 150px; border-radius: 50%;
+      border: 10px solid var(--yellow); background: var(--light-blue);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; margin: 0 auto 22px;
     }
-    .score-ring .score-num { font-size: 2.2rem; font-weight: 900; color: var(--blue); }
-    .score-ring .score-label { font-size: .75rem; color: var(--muted); }
-    .hero-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .hero-card p { font-size: .9rem; color: var(--muted); }
-    .stars { color: var(--yellow); font-size: 1.2rem; margin-top: 12px; }
+    .score-ring .score-num { font-size: 2.4rem; font-weight: 900; color: var(--dark-blue); }
+    .score-ring .score-label { font-size: .72rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    .hero-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; color: var(--dark-blue); }
+    .hero-card p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .free-tag-card {
+      display: inline-block; background: #e6f4ea; color: #1e7e34;
+      font-size: .8rem; font-weight: 700; padding: 6px 14px;
+      border-radius: 20px; margin-top: 16px;
+    }
 
-    /* STATS */
-    .stats {
-      display: flex; justify-content: center; gap: 0;
-      background: var(--dark); color: white; flex-wrap: wrap;
-    }
-    .stat-item {
-      flex: 1; min-width: 180px; padding: 40px 20px; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.1);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-size: 2.4rem; font-weight: 900; color: var(--yellow); }
-    .stat-label { font-size: .9rem; opacity: .7; margin-top: 6px; }
-
-    /* SECTIONS SHARED */
-    section { padding: 90px 60px; }
+    /* SECTIONS */
+    section { padding: 80px 60px; }
     .section-tag {
       display: inline-block; background: var(--light-blue); color: var(--blue);
-      font-weight: 700; font-size: .8rem; padding: 5px 14px; border-radius: 20px;
+      font-weight: 700; font-size: .78rem; padding: 5px 14px; border-radius: 20px;
       letter-spacing: 1px; margin-bottom: 14px; text-transform: uppercase;
     }
-    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; }
-    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 560px; line-height: 1.7; }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 14px; }
+    .section-sub { color: var(--muted); font-size: 1rem; max-width: 540px; line-height: 1.75; }
     .center { text-align: center; }
     .center .section-sub { margin: 0 auto; }
 
-    /* SUBJECTS */
-    .subjects { background: var(--gray); }
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 50px; }
-    .subject-card {
-      background: white; border-radius: 16px; padding: 36px 28px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform .25s, box-shadow .25s;
-      border-top: 5px solid transparent;
+    /* ABOUT + SUBJECTS COMBINED */
+    .about-subjects { background: var(--gray); }
+    .about-inner { display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap; }
+    .about-visual {
+      flex: 0 0 auto;
+      background: linear-gradient(135deg, #0d47a1, #1a73e8);
+      border-radius: 24px; padding: 48px 36px; text-align: center;
+      color: white; min-width: 220px;
     }
-    .subject-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
-    .subject-card.blue { border-top-color: #1a73e8; }
-    .subject-card.green { border-top-color: #34a853; }
-    .subject-card.purple { border-top-color: #9c27b0; }
-    .subject-card.orange { border-top-color: #f57c00; }
-    .card-icon { font-size: 2.4rem; margin-bottom: 18px; }
-    .subject-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
-    .subject-card p { color: var(--muted); font-size: .95rem; line-height: 1.6; }
-    .card-topics { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .topic-tag {
-      background: var(--light-blue); color: var(--blue);
-      font-size: .78rem; font-weight: 600; padding: 4px 12px; border-radius: 12px;
-    }
+    .about-big-score { font-size: 4.5rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+    .about-score-label { font-size: .95rem; opacity: .85; margin-top: 8px; font-weight: 600; }
+    .about-divider { width: 40px; height: 3px; background: rgba(255,255,255,.25); margin: 18px auto; border-radius: 2px; }
+    .about-sub-text { font-size: .85rem; opacity: .7; line-height: 1.6; }
+    .about-content { flex: 1; min-width: 260px; }
+    .about-content p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 14px; }
 
-    /* HOW IT WORKS */
-    .steps { display: flex; gap: 30px; margin-top: 60px; flex-wrap: wrap; justify-content: center; }
-    .step {
-      flex: 1; min-width: 220px; max-width: 280px;
-      text-align: center; padding: 30px 20px;
-      background: white; border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      position: relative;
+    /* SUBJECT CARDS */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
+    .subject-card {
+      background: white; border-radius: 14px; padding: 30px 26px;
+      border-top: 5px solid transparent;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: transform .2s, box-shadow .2s;
     }
-    .step-num {
-      width: 52px; height: 52px; background: var(--blue); color: white;
-      border-radius: 50%; font-size: 1.4rem; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-    }
-    .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
-    .step p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .subject-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.09); }
+    .subject-card.blue { border-top-color: var(--blue); }
+    .subject-card.green { border-top-color: #34a853; }
+    .card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .subject-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .subject-card p { color: var(--muted); font-size: .93rem; line-height: 1.65; }
 
     /* PRICING */
-    .pricing { background: var(--gray); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px; margin-top: 50px; }
-    .pricing-card {
-      background: white; border-radius: 20px; padding: 40px 32px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07); position: relative; overflow: hidden;
-    }
-    .pricing-card.popular { background: var(--blue); color: white; transform: scale(1.04); }
-    .popular-badge {
-      position: absolute; top: 18px; right: 18px;
-      background: var(--yellow); color: #1a1a1a; font-size: .75rem;
-      font-weight: 800; padding: 4px 12px; border-radius: 20px;
-    }
-    .pricing-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
-    .price { font-size: 2.8rem; font-weight: 900; margin: 16px 0; }
-    .price span { font-size: 1rem; font-weight: 400; opacity: .7; }
-    .pricing-card ul { list-style: none; margin: 20px 0 30px; }
-    .pricing-card li {
-      padding: 8px 0; font-size: .95rem;
-      border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; gap: 10px;
-    }
-    .pricing-card.popular li { border-color: rgba(255,255,255,0.15); }
-    .check { color: #34a853; font-weight: 700; }
-    .pricing-card.popular .check { color: var(--yellow); }
-    .btn-card {
-      width: 100%; padding: 13px; border-radius: 25px; font-weight: 700;
-      font-size: 1rem; border: none; cursor: pointer; transition: opacity .2s;
+    .pricing { background: white; }
+    .pricing-center { max-width: 480px; margin: 44px auto 0; }
+    .pricing-card-single {
       background: var(--blue); color: white;
+      border-radius: 24px; padding: 50px 40px; text-align: center;
+      box-shadow: 0 12px 40px rgba(26,115,232,0.3); position: relative; overflow: hidden;
     }
-    .pricing-card.popular .btn-card { background: white; color: var(--blue); }
-    .btn-card:hover { opacity: .88; }
-
-    /* TESTIMONIALS */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 50px; }
-    .testimonial-card {
-      background: white; border-radius: 16px; padding: 30px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    .free-ribbon {
+      position: absolute; top: 22px; right: -30px;
+      background: #34a853; color: white; font-size: .75rem; font-weight: 800;
+      padding: 6px 50px; transform: rotate(45deg); letter-spacing: .5px;
     }
-    .t-stars { color: var(--yellow); font-size: 1rem; margin-bottom: 14px; }
-    .t-quote { font-size: .97rem; line-height: 1.7; color: var(--text); font-style: italic; margin-bottom: 20px; }
-    .t-author { display: flex; align-items: center; gap: 14px; }
-    .t-avatar {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: var(--blue); color: white; font-weight: 700;
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-    }
-    .t-name { font-weight: 700; font-size: .95rem; }
-    .t-detail { font-size: .82rem; color: var(--muted); }
-
-    /* CTA BANNER */
-    .cta-banner {
-      background: linear-gradient(135deg, #0d47a1, #1a73e8);
-      color: white; text-align: center; padding: 80px 60px;
-    }
-    .cta-banner h2 { font-size: 2.4rem; font-weight: 900; margin-bottom: 16px; }
-    .cta-banner p { font-size: 1.1rem; opacity: .9; margin-bottom: 36px; }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark); color: white; padding: 60px;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
-    }
-    .footer-brand p { color: rgba(255,255,255,0.6); margin-top: 14px; font-size: .9rem; line-height: 1.7; }
-    footer h4 { font-size: 1rem; font-weight: 700; margin-bottom: 18px; color: var(--yellow); }
-    footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    footer ul li a { color: rgba(255,255,255,0.65); font-size: .9rem; transition: color .2s; }
-    footer ul li a:hover { color: white; }
-    .footer-bottom {
-      background: #111; color: rgba(255,255,255,0.4);
-      text-align: center; padding: 18px; font-size: .85rem;
-    }
-
-    @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      .hero { flex-direction: column; padding: 70px 24px; text-align: center; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero-btns { justify-content: center; }
-      section { padding: 60px 24px; }
-      footer { grid-template-columns: 1fr 1fr; padding: 40px 24px; }
-      .cta-banner { padding: 60px 24px; }
-      .cta-banner h2 { font-size: 1.8rem; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <div class="logo">SAT <span>Made Easy</span></div>
-  <ul class="nav-links">
-    <li><a href="#subjects">Subjects</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-  </ul>
-  <a href="#pricing" class="nav-cta">Get Started</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-badge">🎓 #1 SAT Prep Platform</div>
-    <h1>Score Higher.<br/><span>Stress Less.</span><br/>Ace the SAT.</h1>
-    <p>Personalized, expert-led SAT tutoring that fits your schedule. Our proven methods have helped thousands of students reach their dream scores.</p>
-    <div class="hero-btns">
-      <a href="#pricing" class="btn-primary">Start Free Trial</a>
-      <a href="#how" class="btn-outline">See How It Works</a>
-    </div>
-  </div>
-  <div class="hero-card">
-    <div class="score-ring">
-      <div class="score-num">1550</div>
-      <div class="score-label">Avg. Score</div>
-    </div>
-    <h3>Average Student Score</h3>
-    <p>Our students improve by an average of <strong>200+ points</strong></p>
-    <div class="stars">★★★★★</div>
-    <p style="font-size:.82rem;color:#999;margin-top:6px;">Rated 4.9/5 by 2,000+ students</p>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-item">
-    <div class="stat-num">5,000+</div>
-    <div class="stat-label">Students Tutored</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">200+</div>
-    <div class="stat-label">Avg. Score Increase</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">98%</div>
-    <div class="stat-label">Satisfaction Rate</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">50+</div>
-    <div class="stat-label">Expert Tutors</div>
-  </div>
-</div>
-
-<!-- SUBJECTS -->
-<section class="subjects" id="subjects">
-  <div class="center">
-    <div class="section-tag">What We Cover</div>
-    <h2 class="section-title">Master Every Section of the SAT</h2>
-    <p class="section-sub">Targeted practice and instruction across all SAT modules — so no section holds you back.</p>
-  </div>
-  <div class="cards-grid">
-    <div class="subject-card blue">
-      <div class="card-icon">📖</div>
-      <h3>Reading & Writing</h3>
-      <p>Build strong reading comprehension and grammar skills to conquer the Evidence-Based section.</p>
-      <div class="card-topics">
-        <span class="topic-tag">Vocabulary</span>
-        <span class="topic-tag">Inference</span>
-        <span class="topic-tag">Grammar</span>
-        <span class="topic-tag">Main Idea</span>
-      </div>
-    </div>
-    <div class="subject-card green">
-      <div class="card-icon">🔢</div>
-      <h3>Math – No Calculator</h3>
-      <p>Strengthen mental math and algebra skills for the no-calculator module with focused drills.</p>
-      <div class="card-topics">
-        <span class="topic-tag">Algebra</span>
-        <span class="topic-tag">Equations</span>
-        <span class="topic-tag">Functions</span>
-      </div>
-    </div>
-    <div class="subject-card purple">
-      <div class="card-icon">📊</div>
-      <h3>Math – Calculator</h3>
-      <p>Tackle data analysis, statistics, and complex problem-solving with strategic calculator use.</p>
-      <div class="card-topics">
-        <span class="topic-tag">Statistics</span>
-        <span class="topic-tag">Geometry</span>
-        <span class="topic-tag">Word Problems</span>
-      </div>
-    </div>
-    <div class="subject-card orange">
-      <div class="card-icon">📝</div>
-      <h3>Essay (Optional)</h3>
-      <p>Learn to analyze arguments and craft well-structured essays that impress admissions committees.</p>
-      <div class="card-topics">
-        <span class="topic-tag">Analysis</span>
-        <span class="topic-tag">Structure</span>
-        <span class="topic-tag">Evidence</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="center">
-    <div class="section-tag">The Process</div>
-    <h2 class="section-title">How SAT Made Easy Works</h2>
-    <p class="section-sub">A simple, structured path to your target score in four steps.</p>
-  </div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Diagnostic Test</h3>
-      <p>Take a free full-length SAT diagnostic to identify your strengths and areas for improvement.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Custom Study Plan</h3>
-      <p>Receive a personalized study plan built around your goals, schedule, and test date.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>1-on-1 Tutoring</h3>
-      <p>Work with an expert tutor in live sessions — online or in-person — at your pace.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h3>Practice & Improve</h3>
-      <p>Complete practice tests, track your progress, and refine your skills until test day.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="center">
-    <div class="section-tag">Plans & Pricing</div>
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <p class="section-sub">Choose the plan that fits your needs. No hidden fees. Cancel anytime.</p>
-  </div>
-  <div class="pricing-grid">
-    <div class="pricing-card">
-      <h3>Starter</h3>
-      <p style="color:var(--muted);font-size:.9rem;">Great for self-starters</p>
-      <div class="price">$49<span>/mo</span></div>
-      <ul>
-        <li><span class="check">✓</span> Diagnostic Test</li>
-        <li><span class="check">✓</span> Study Plan</li>
-        <li><span class="check">✓</span> 2 Tutoring Sessions/mo</li>
-        <li><span class="check">✓</span> Practice Question Bank</li>
-        <li style="opacity:.4;">✗ Progress Dashboard</li>
-        <li style="opacity:.4;">✗ Essay Review</li>
-      </ul>
-      <button class="btn-card">Get Started</button>
-    </div>
-    <div class="pricing-card popular">
-      <div class="popular-badge">Most Popular</div>
-      <h3>Pro</h3>
-      <p style="opacity:.8;font-size:.9rem;">Best for serious score improvement</p>
-      <div class="price">$99<span>/mo</span></div>
-      <ul>
-        <li><span class="check">✓</span> Everything in Starter</li>
-        <li><span class="check">✓</span> 6 Tutoring Sessions/mo</li>
-        <li><span class="check">✓</span> Progress Dashboard</li>
-        <li><span class="check">✓</span> Full-Length Practice Tests</li>
-        <li><span class="check">✓</span> Essay Review</li>
-        <li><span class="check">✓</span> Score Guarantee*</li>
-      </ul>
-      <button class="btn-card">Start Free Trial</button>
-    </div>
-    <div class="pricing-card">
-      <h3>Intensive</h3>
-      <p style="color:var(--muted);font-size:.9rem;">Maximum results, fast</p>
-      <div class="price">$199<span>/mo</span></div>
-      <ul>
-        <li><span class="check">✓</span> Everything in Pro</li>
-        <li><span class="check">✓</span> Unlimited Sessions</li>
-        <li><span class="check">✓</span> Dedicated Tutor</li>
-        <li><span class="check">✓</span> Priority Support</li>
-        <li><span class="check">✓</span> College Counseling</li>
-        <li><span class="check">✓</span> Parent Progress Reports</li>
-      </ul>
-      <button class="btn-card">Contact Us</button>
-    </div>
-  </div>
-  <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;">*Score Guarantee: improve by 150+ points or get your money back.</p>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="center">
-    <div class="section-tag">Student Reviews</div>
-    <h2 class="section-title">Real Students, Real Results</h2>
-    <p class="section-sub">Don't just take our word for it — hear from students who hit their target scores.</p>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"I went from a 1200 to a 1480 in just three months. My tutor was patient, knowledgeable, and always available. SAT Made Easy truly changed my application!"</p>
-      <div class="t-author">
-        <div class="t-avatar">JM</div>
-        <div>
-          <div class="t-name">Jordan M.</div>
-          <div class="t-detail">Score: 1200 → 1480 | Pro Plan</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"The diagnostic test pinpointed exactly where I was losing points. My study plan was incredibly targeted. I hit 1550 on my second attempt!"</p>
-      <div class="t-author">
-        <div class="t-avatar">AS</div>
-        <div>
-          <div class="t-name">Aisha S.</div>
-          <div class="t-detail">Score: 1310 → 1550 | Intensive Plan</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Math was always my weakness. My tutor broke everything down step-by-step with zero judgment. I actually enjoy problem-solving now!"</p>
-      <div class="t-author">
-        <div class="t-avatar">CT</div>
-        <div>
-          <div class="t-name">Carlos T.</div>
-          <div class="t-detail">Score: 1150 → 1390 | Starter Plan</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<div class="cta-banner">
-  <h2>Ready to Reach Your Dream Score?</h2>
-  <p>Join thousands of students who've boosted their SAT score with SAT Made Easy.<br/>Start your free diagnostic test today — no credit card required.</p>
-  <a href="#pricing" class="btn-primary" style="display:inline-block;">Start Free Trial →</a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">
-    <div class="logo">SAT <span>Made Easy</span></div>
-    <p>Expert SAT tutoring for high school students, designed to maximize your score and minimize your stress.</p>
-  </div>
-  <div>
-    <h4>Learn</h4>
-    <ul>
-      <li><a href="#">SAT Reading</a></li>
-      <li><a href="#">SAT Math</a></li>
-      <li><a href="#">SAT Writing</a></li>
-      <li><a href="#">Free Resources</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Company</h4>
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Our Tutors</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Support</h4>
-    <ul>
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Refund Policy</a></li>
-    </ul>
-  </div>
-</footer>
-<div class="footer-bottom">
-  © 2025 SAT Made Easy. All rights reserved.
-</div>
-
-</body>
-</html>
+    .pricing-card-single h3 { font-size: 1.2rem; font-weight: 700; opacity

@@ -99,16 +99,28 @@
     /* ABOUT + SUBJECTS */
     .about-subjects { background: var(--gray); }
     .about-inner { display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap; }
-    .about-visual {
-      flex: 0 0 auto;
-      background: linear-gradient(135deg, #0d47a1, #1a73e8);
-      border-radius: 24px; padding: 48px 36px; text-align: center;
-      color: white; min-width: 220px;
+
+    /* LEFT COLUMN */
+    .about-left {
+      flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; min-width: 220px;
     }
-    .about-big-score { font-size: 4.5rem; font-weight: 900; color: var(--yellow); line-height: 1; }
-    .about-score-label { font-size: .95rem; opacity: .85; margin-top: 8px; font-weight: 600; }
-    .about-divider { width: 40px; height: 3px; background: rgba(255,255,255,.25); margin: 18px auto; border-radius: 2px; }
-    .about-sub-text { font-size: .85rem; opacity: .7; line-height: 1.6; }
+    .tutor-photo {
+      width: 200px; height: 200px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 5px solid white;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .tutor-name-card {
+      background: linear-gradient(135deg, #0d47a1, #1a73e8);
+      border-radius: 20px; padding: 24px 30px; text-align: center;
+      color: white; width: 100%;
+    }
+    .tutor-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; }
+    .tutor-title { font-size: .85rem; opacity: .75; margin-bottom: 14px; }
+    .about-divider { width: 40px; height: 3px; background: rgba(255,255,255,.25); margin: 0 auto 14px; border-radius: 2px; }
+    .about-big-score { font-size: 3rem; font-weight: 900; color: var(--yellow); line-height: 1; }
+    .about-score-label { font-size: .82rem; opacity: .8; margin-top: 4px; font-weight: 600; }
+
     .about-content { flex: 1; min-width: 260px; }
     .about-content p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 14px; }
 
@@ -231,7 +243,8 @@
       .hero h1 { font-size: 2.2rem; }
       .hero-btns { justify-content: center; }
       section { padding: 60px 24px; }
-      .about-inner { flex-direction: column; text-align: center; }
+      .about-inner { flex-direction: column; align-items: center; text-align: center; }
+      .about-left { width: 100%; align-items: center; }
       footer { flex-direction: column; text-align: center; padding: 36px 24px; }
       .footer-links { justify-content: center; }
       .pricing-card-single { padding: 40px 24px; }
@@ -277,12 +290,20 @@
 <!-- ABOUT + SUBJECTS -->
 <section class="about-subjects" id="about">
   <div class="about-inner">
-    <div class="about-visual">
-      <div class="about-big-score">1590</div>
-      <div class="about-score-label">SAT Superscore</div>
-      <div class="about-divider"></div>
-      <div class="about-sub-text">English and Math</div>
+
+    <!-- LEFT: photo + name card -->
+    <div class="about-left">
+      <img src="headshot.jpg" alt="Dhruv Sakala" class="tutor-photo" />
+      <div class="tutor-name-card">
+        <div class="tutor-name">Dhruv Sakala</div>
+        <div class="tutor-title">SAT Tutor</div>
+        <div class="about-divider"></div>
+        <div class="about-big-score">1590</div>
+        <div class="about-score-label">SAT Superscore</div>
+      </div>
     </div>
+
+    <!-- RIGHT: content -->
     <div class="about-content">
       <div class="section-tag">About Your Tutor</div>
       <h2 class="section-title">Why Work With Me</h2>
@@ -299,6 +320,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -415,23 +437,19 @@
   function handleOverlayClick(e) {
     if (e.target === document.getElementById('modalOverlay')) closeModal();
   }
-
   async function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('bookingForm');
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.textContent = 'Sending...';
-
     const data = new FormData(form);
-
     try {
       const response = await fetch('https://formspree.io/f/mnpndkna', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
       });
-
       if (response.ok) {
         document.getElementById('formState').style.display = 'none';
         document.getElementById('successState').style.display = 'block';
@@ -446,7 +464,6 @@
       alert('Something went wrong. Please try again.');
     }
   }
-
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
   });
